@@ -1,20 +1,37 @@
-import { Flex, Box } from '@chakra-ui/core'
+import { Flex, Box, Text } from '@chakra-ui/core'
+import { Card, Container } from '../components/UI'
+import NavBar from '../components/Navbar'
 
 function Home() {
 	return (
-		<Flex minHeight="100vh" flexDir="column" height="20" bg="gray.100">
-			<Flex width="full" maxWidth="4xl" mx="auto">
-				<Box
+		<>
+			<Container>
+				<Flex
 					boxShadow="sm"
-					borderRadius="lg"
+					borderRadius="md"
+					my="10"
 					bg="white"
-					width="full"
-					height="20"
+					flexDir="column"
+					p="10"
+					textAlign="right"
 				>
-					Hello
+					<Text fontSize="4xl">Thinkify</Text>
+					<Text fontSize="4xl">The best place to find a job</Text>
+				</Flex>
+			</Container>
+			<Container flexDir="row">
+				<Box width="70%">
+					{Array(9)
+						.fill(null)
+						.map(item => (
+							<Card />
+						))}
 				</Box>
-			</Flex>
-		</Flex>
+				<Box pl="4" width="30%">
+					<Card />
+				</Box>
+			</Container>
+		</>
 	)
 }
 

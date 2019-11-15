@@ -1,14 +1,15 @@
 import App from 'next/app'
-import { ThemeProvider, CSSReset } from '@chakra-ui/core'
+import Layout from '../components/_App/Layout'
+import NavBar from '../components/Navbar'
 
 class MyApp extends App {
 	render() {
 		const { Component } = this.props
 		return (
-			<ThemeProvider>
-				<CSSReset />
+			<Layout>
+				<NavBar />
 				<Component />
-			</ThemeProvider>
+			</Layout>
 		)
 	}
 }

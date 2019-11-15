@@ -26,6 +26,7 @@
     "nprogress": "^0.2.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-select": "^3.0.8",
     "react-stripe-checkout": "^2.6.3",
     "semantic-ui-react": "^0.88.1",
     "shortid": "^2.2.15",
