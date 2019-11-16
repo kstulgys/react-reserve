@@ -1,16 +1,15 @@
 import { Flex, Box } from '@chakra-ui/core'
 
-export default function Card() {
+export default function Card(props) {
 	return (
 		<Box
-			my="3"
-			boxShadow="sm"
+			p="6"
 			borderRadius="md"
+			boxShadow="sm"
 			bg="white"
 			width="full"
 			height="32"
-		>
-			Hello
-		</Box>
+			{...props}
+		/>
 	)
 }

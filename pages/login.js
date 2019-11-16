@@ -1,28 +1,11 @@
-import { useEffect, useState } from 'react'
-import {
-	Flex,
-	Box,
-	Text,
-	InputGroup,
-	Input,
-	Icon,
-	InputLeftElement,
-	InputRightElement,
-} from '@chakra-ui/core'
-import { Card, Container, Search } from '../components/UI'
+import { Flex, Box, Text, Input } from '@chakra-ui/core'
+import { Card, Container } from '../components/UI/Primitives'
+import LoginForm from '../components/LoginForm'
 
-function Login() {
-	const [things, setThings] = useState([])
+export default function Login() {
 	return (
 		<Container>
-			<Search />
-			{/* <Box mt="32">
-				{things.map(t => {
-					return <Text>{t.value}</Text>
-				})}
-			</Box> */}
+			<LoginForm />
 		</Container>
 	)
 }
-
-export default Login

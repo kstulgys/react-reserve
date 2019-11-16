@@ -1,30 +1,25 @@
 import Head from 'next/head'
-import Header from './Header'
 import HeadContent from './HeadContent'
 import { ThemeProvider, CSSReset, Flex } from '@chakra-ui/core'
-import { AppWrapper } from '../UI'
+import AppWrapper from '../UI/AppWrapper'
 
-function Layout({ children }) {
+export default function Layout({ children }) {
 	return (
-		<>
+		<html lang="en">
 			<Head>
 				<HeadContent />
-				{/* Stylesheets */}
-				{/* <link rel="stylesheet" type="text/css" href="/static/styles.css" /> */}
+				<link
+					rel="stylesheet"
+					href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900&display=swap"
+				></link>
 				<link rel="stylesheet" type="text/css" href="/static/nprogress.css" />
-				{/* <link
-          rel="stylesheet"
-          href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css"
-        /> */}
-				<title>ReactReserve</title>
+				<link rel="stylesheet" type="text/css" href="/static/styles.css" />
+				<title>Job Search</title>
 			</Head>
-			{/* <Header /> */}
 			<ThemeProvider>
 				<CSSReset />
 				<AppWrapper>{children}</AppWrapper>
 			</ThemeProvider>
-		</>
+		</html>
 	)
 }
-
-export default Layout
