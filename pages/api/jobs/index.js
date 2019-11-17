@@ -1,9 +1,9 @@
-import JOBS from '../../data/jobs.json'
+import JOBS from '../../../data/jobs.json'
 
 // HELPER
-const getJobById = id => JOBS.find(job => job.id === id)
-const searchJobs = search =>
-	JOBS.filter(job => job.title.toLowerCase().indexOf(search.toLowerCase()) > -1)
+// const getJobById = id => JOBS.find(job => job.id === id)
+// const searchJobs = search =>
+// 	JOBS.filter(job => job.title.toLowerCase().indexOf(search.toLowerCase()) > -1)
 // const getUserByEmail = email => USERS.find(user => user.email === email)
 // const getUserById = id => USERS.find(user => user.id === id)
 // const saveUserFavorites = (userID, favorites) =>
@@ -16,9 +16,9 @@ const searchJobs = search =>
 
 // JOBS
 
-// export default (req, res) => {
-// 	res.status(200).json(JOBS)
-// }
+export default (req, res) => {
+	res.status(200).json(JOBS)
+}
 
 // router.get('/jobs', (req, res) => {
 //   const { search, start = 0, length = 20 } = req.query;

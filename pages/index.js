@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types'
-import { Flex, Box, Text, Button } from '@chakra-ui/core'
+import { memo } from 'react'
+import { Flex, Box, Text, Button, Image } from '@chakra-ui/core'
 import { Card, Container, Link } from '../components/UI/Primitives'
 import Search from '../components/Search'
 import axios from 'axios'
 import { FiUploadCloud } from 'react-icons/fi'
+import JobListItem from '../components/JobListItem'
 
-function Home({ jobs }) {
+export default function Home({ jobs }) {
 	return (
 		<>
 			<Container>
@@ -19,18 +21,7 @@ function Home({ jobs }) {
 					overflow="hidden"
 					boxShadow="sm"
 				>
-					{jobs.map(({ title, id, description }) => (
-						<Link key={id} to={`/job?jobId=${id}`} as={`/job/${id}`}>
-							<Card
-								borderRadius="none"
-								borderBottom="2px"
-								borderColor="gray.200"
-							>
-								<Text>{title}</Text>
-								<Text>{description}</Text>
-							</Card>
-						</Link>
-					))}
+					<JobList jobs={jobs} />
 				</Box>
 				<Box pl="4" width="30%">
 					<Card height="auto">
@@ -51,4 +42,18 @@ Home.getInitialProps = async () => {
 	return { jobs: data }
 }
 
-export default Home
+const JobList = memo(({ jobs }) => {
+	return (
+		jobs &&
+		jobs.map(job => (
+			<Link
+				key={job.id}
+				to={`/job?jobId=${job.id}`}
+				as={`/job/${job.id}`}
+				_hover={{ textDecoration: 'none' }}
+			>
+				<JobListItem job={job} />
+			</Link>
+		))
+	)
+})
